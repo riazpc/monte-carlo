@@ -1,11 +1,13 @@
 package montecarlo;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Run simulations for 2 portfolios, aggressive and conservative, an compare their median, best and worst case performance.
  */
 public class Main {
+
     public static void main(String[] args) {
 
         int simulations = 10000, initialAmount = 100000, periods = 20;
@@ -17,15 +19,21 @@ public class Main {
         //Aggressive portfolio and its performance
         Portfolio aggressivePortfolio = new Portfolio(0.094324, 0.15675);
         List<Double> aggressiveReturns = simulator.runSimulation(aggressivePortfolio);
-        System.out.println("Aggressive Median " + ((aggressiveReturns.get(5000) + aggressiveReturns.get(5001)) / 2));
-        System.out.println("Aggressive 10% Best case " + (aggressiveReturns.get(9000)));
-        System.out.println("Aggressive 10% Worst case " + (aggressiveReturns.get(1000)));
+        System.out.println(String.join("", Collections.nCopies(50, "*")));
+        System.out.println("Aggressive Porfolio");
+        System.out.println(String.join("", Collections.nCopies(50, "*")));
+        System.out.println(" Median " + ((aggressiveReturns.get(5000) + aggressiveReturns.get(5001)) / 2));
+        System.out.println(" 10% Best case " + (aggressiveReturns.get(9000)));
+        System.out.println(" 10% Worst case " + (aggressiveReturns.get(1000)));
 
         //conservative portfolio and its performance
         Portfolio conservativePortfolio = new Portfolio(0.06189, 0.063438);
         List<Double> conservativeReturns = simulator.runSimulation(conservativePortfolio);
-        System.out.println("Conservative Median " + ((conservativeReturns.get(5000) + conservativeReturns.get(5001)) / 2));
-        System.out.println("Conservative 10% Best case " + (conservativeReturns.get(9000)));
-        System.out.println("Conservative 10% Worst case " + (conservativeReturns.get(1000)));
+        System.out.println(String.join("", Collections.nCopies(50, "*")));
+        System.out.println("Conservative Portfolio");
+        System.out.println(String.join("", Collections.nCopies(50, "*")));
+        System.out.println(" Median " + ((conservativeReturns.get(5000) + conservativeReturns.get(5001)) / 2));
+        System.out.println(" 10% Best case " + (conservativeReturns.get(9000)));
+        System.out.println(" 10% Worst case " + (conservativeReturns.get(1000)));
     }
 }

@@ -1,8 +1,0 @@
-montecarlo/BasePortfolio.java
- montecarlo.BasePortfolio
-montecarlo/Simulator.java
- montecarlo.Simulator
-montecarlo/Portfolio.java
- montecarlo.Portfolio
-montecarlo/Main.java
- montecarlo.Main
